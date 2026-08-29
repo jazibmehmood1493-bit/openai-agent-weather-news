@@ -1,14 +1,14 @@
-imort os
-from swarm import swarm,Agent
-client=swarm()
+import os
+from swarm import Swarm,Agent
+client=Swarm()
 def get_weather(location: str):
     return f"The weather in {location} is sunny with a temperature of 25C."
     def get_news(topic: str):
         return f"The latest news on '{topic}':openAI announces new updates!"
-        my_agent=agent(
+        my_agent=Agent(
             name="weather and News Agent",
             instructions="You are a helpful assistant.Use the available tools to provide weather updates or news.",
-            function=[get_weather,get_news],
+            functions=[get_weather,get_news],
         )
         if __name__=="__main__":
             response=client.run(
